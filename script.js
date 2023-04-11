@@ -1,23 +1,29 @@
 const routes = {
-    "/": "/pages/home.html",
-    "/about": "/pages/about.html",
-    "/contact": "/pages/contact.html",
-    404: "/pages/404.html",
+  "/": "/pages/home.html",
+  "/about": "/pages/about.html",
+  "/contact": "/pages/contact.html",
+  404: "/pages/404.html",
 }
 
 
 function route(event) {
-    event = event || window.event
-    event.preventDefault()
+  event = event || window.event
+  event.preventDefault()
 
-    window.history.pushState({}, "", event.target.href)
+  window.history.pushState({}, "", event.target.href)
 
-
-    handle()
+  handle()
 }
 
 function handle() {
-    const { pathname } = window.location
+  const { pathname } = window.location
+  const route = routes[pathname] || routes[404]
 
-    console.log(pathname)
+  console.log("antes do fetch")
+
+  fetch(route)
+  .then(data => data.text())
+  .then(html => console.log(html))
+
+  console.log(route)
 }
