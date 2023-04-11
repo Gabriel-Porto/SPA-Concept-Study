@@ -19,11 +19,16 @@ function handle() {
   const { pathname } = window.location
   const route = routes[pathname] || routes[404]
 
-  console.log("antes do fetch")
 
   fetch(route)
   .then(data => data.text())
-  .then(html => console.log(html))
+  .then(html => {
+    document.querySelector("#app").innerHTML = html
+  })
 
-  console.log(route)
 }
+
+handle()
+
+window.onpopstate = () => handle()
+window.route = () => route()
