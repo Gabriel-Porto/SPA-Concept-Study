@@ -1,0 +1,23 @@
+{
+  "name": "acompanhando-aulas---spa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-Porto/SPA-Concept-Study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-Porto/SPA-Concept-Study/issues"
+  },
+  "homepage": "https://github.com/Gabriel-Porto/SPA-Concept-Study#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
